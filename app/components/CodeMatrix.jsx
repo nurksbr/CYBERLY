@@ -42,11 +42,11 @@ function CodeMatrix({ className = '' }) {
     
     window.addEventListener('resize', handleResize)
 
-    // Matrix karakterleri - sadece 0 ve 1
-    const characters = '01'
+    // Matrix karakterleri
+    const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン{}[]/\\|><@#$%^&*()_+-='
     
     // Font boyutu
-    const fontSize = 16
+    const fontSize = 14
     
     // Sütun sayısı
     const columns = Math.floor(dimensions.width / fontSize)
@@ -68,7 +68,7 @@ function CodeMatrix({ className = '' }) {
     // Matrix animasyonu
     const animate = () => {
       // Yarı saydam siyah arkaplan, eski karakterleri soldurmak için
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)' // Daha yavaş solma efekti için daha düşük opaklık
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)'
       ctx.fillRect(0, 0, dimensions.width, dimensions.height)
       
       // Metin özellikleri
@@ -78,7 +78,7 @@ function CodeMatrix({ className = '' }) {
       
       // Her sütun için damla çiz
       for (let i = 0; i < drops.length; i++) {
-        // Rastgele bir karakter seç (0 veya 1)
+        // Rastgele bir karakter seç
         const char = characters[Math.floor(Math.random() * characters.length)]
         
         // X koordinatı (sütun)
@@ -88,8 +88,8 @@ function CodeMatrix({ className = '' }) {
         const y = drops[i] * fontSize
         
         // Rastgele parlak karakterler ekle
-        if (Math.random() > 0.98) {
-          ctx.fillStyle = '#ffffff' // Beyaz renk - daha nadiren
+        if (Math.random() > 0.95) {
+          ctx.fillStyle = '#ffffff' // Beyaz renk
         } else {
           // Rastgele ton değişimi
           const opacity = Math.random() * 0.5 + 0.5 // 0.5 ile 1 arasında
@@ -100,18 +100,15 @@ function CodeMatrix({ className = '' }) {
         ctx.fillText(char, x, y)
         
         // Eğer damla ekranın altındaysa veya rastgele olasılık
-        if (y > dimensions.height || Math.random() > 0.995) { // Daha düşük olasılık, daha uzun akış
+        if (y > dimensions.height || Math.random() > 0.98) {
           drops[i] = 0
         }
         
-        // Damlayı daha yavaş hareket ettir
-        drops[i] += 0.5 // Yavaşlatmak için daha küçük artış
+        // Damlayı aşağı hareket ettir
+        drops[i]++
       }
       
-      // Daha yavaş yenileme hızı
-      setTimeout(() => {
-        animationFrameId = requestAnimationFrame(animate)
-      }, 80) // 80ms gecikme ekleyerek animasyonu yavaşlat
+      animationFrameId = requestAnimationFrame(animate)
     }
     
     // Animasyonu başlat

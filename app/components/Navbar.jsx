@@ -27,7 +27,7 @@ function Navbar() {
   ]
 
   return (
-    <nav className="bg-gray-900 text-white shadow-lg border-b border-cyan-700">
+    <nav className="bg-gray-900 text-white shadow-lg border-b border-cyan-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -38,7 +38,7 @@ function Navbar() {
                   alt="CYBERLY Logo"
                   width={32}
                   height={32}
-                  className="text-cyan-500 text-glow"
+                  className="text-cyan-400 text-glow"
                 />
               </div>
               <span className="font-bold text-xl text-cyan-400 text-glow">CYBERLY</span>

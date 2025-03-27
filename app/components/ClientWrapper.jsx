@@ -20,8 +20,8 @@ function ClientWrapper() {
 
   return (
     <>
-      {/* Matrix animasyonu - tüm ekranı kaplar */}
-      <div className="fixed inset-0 w-full h-full z-10 opacity-50 pointer-events-none overflow-hidden">
+      {/* Sol taraftaki Matrix animasyonu */}
+      <div className="fixed left-0 top-0 w-1/3 h-full z-10 opacity-70 pointer-events-none overflow-hidden">
         <CodeMatrix />
       </div>
       
