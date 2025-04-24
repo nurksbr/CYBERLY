@@ -46,11 +46,11 @@ body {
 }
 
 .text-glow {
-  text-shadow: 0 0 10px var(--matrix-color), 0 0 20px var(--matrix-color);
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.7);
 }
 
 .border-glow {
-  box-shadow: 0 0 10px var(--matrix-color);
+  box-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
 }
 
 ::-webkit-scrollbar {
@@ -69,6 +69,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #06b6d4;
+}
+
+/* Giriş/Üyelik sayfaları için grid pattern */
+.bg-grid-pattern {
+  background-size: 20px 20px;
+  background-image:
+    linear-gradient(to right, rgba(0, 170, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 170, 255, 0.07) 1px, transparent 1px);
 }
 
 /* Diğer global stiller buraya */

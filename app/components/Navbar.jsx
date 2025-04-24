@@ -86,10 +86,24 @@ function Navbar() {
             <a 
               href="#iletisim" 
               onClick={scrollToContact}
-              className="ml-4 px-4 py-2 rounded-md text-sm font-medium bg-cyan-600/60 hover:bg-cyan-700 transition-colors border-glow"
+              className="px-4 py-2 rounded-md text-sm font-medium bg-cyan-600/60 hover:bg-cyan-700 transition-colors border-glow"
             >
               İletişim
             </a>
+            <div className="ml-4 flex items-center space-x-2">
+              <Link 
+                href="/giris" 
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800/30 hover:text-cyan-400 transition-colors"
+              >
+                Giriş Yap
+              </Link>
+              <Link 
+                href="/uye-ol" 
+                className="px-4 py-2 rounded-md text-sm font-medium bg-cyan-500/80 hover:bg-cyan-600 transition-colors"
+              >
+                Üye Ol
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -152,6 +166,20 @@ function Navbar() {
           >
             İletişim
           </a>
+          <Link 
+            href="/giris" 
+            className="block px-3 py-2 mt-2 rounded-md text-base font-medium hover:bg-gray-800/30 hover:text-cyan-400 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Giriş Yap
+          </Link>
+          <Link 
+            href="/uye-ol" 
+            className="block px-3 py-2 mt-2 rounded-md text-base font-medium bg-cyan-500/80 hover:bg-cyan-600 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Üye Ol
+          </Link>
         </div>
       </div>
     </nav>
